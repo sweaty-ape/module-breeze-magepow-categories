@@ -1,0 +1,30 @@
+& when (@critical) {
+    .magepow-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: @4;
+
+        @media @media-sm {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media @media-lg {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .magepow-categories-category {
+            display: flex;
+            flex-direction: column;
+
+            .magepow-categories-category-image {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+& when not (@critical) {
+    .magepow-categories-grid .magepow-categories-category .magepow-categories-category-name a:hover {
+        text-decoration: underline;
+    }
+}

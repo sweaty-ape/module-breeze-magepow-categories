@@ -1,0 +1,22 @@
+<?
+
+$categories = $block->getCategories();
+
+if (!is_countable($categories) || empty(count($categories))) {
+    return;
+}
+
+?>
+
+<div class="magepow-categories-grid">
+    <? foreach ($categories as $category): ?>
+        <div class="magepow-categories-category scroll-reveal">
+            <a href="<?= $category->getUrl(); ?>" class="magepow-categories-category-image rounded hover-zoom">
+                <img src="<?= $this->getImage($category); ?>" alt="<?= $category->getName(); ?>"/>
+            </a>
+            <div class="magepow-categories-category-name text-center font-semibold">
+                <a href="<?= $category->getUrl(); ?>"><?= $category->getName(); ?></a>
+            </div>
+        </div>
+    <? endforeach; ?>
+</div>
